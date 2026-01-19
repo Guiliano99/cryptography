@@ -122,6 +122,12 @@ class SignatureAlgorithmOID:
     GOSTR3411_94_WITH_3410_2001 = ObjectIdentifier("1.2.643.2.2.3")
     GOSTR3410_2012_WITH_3411_2012_256 = ObjectIdentifier("1.2.643.7.1.1.3.2")
     GOSTR3410_2012_WITH_3411_2012_512 = ObjectIdentifier("1.2.643.7.1.1.3.3")
+    MLDSA44 = ObjectIdentifier("2.16.840.1.101.3.4.3.17")
+    MLDSA65 = ObjectIdentifier("2.16.840.1.101.3.4.3.18")
+    MLDSA87 = ObjectIdentifier("2.16.840.1.101.3.4.3.19")
+    HASH_MLDSA44_WITH_SHA512 = ObjectIdentifier("2.16.840.1.101.3.4.3.32")
+    HASH_MLDSA65_WITH_SHA512 = ObjectIdentifier("2.16.840.1.101.3.4.3.33")
+    HASH_MLDSA87_WITH_SHA512 = ObjectIdentifier("2.16.840.1.101.3.4.3.34")
 
 
 _SIG_OIDS_TO_HASH: dict[ObjectIdentifier, hashes.HashAlgorithm | None] = {
@@ -153,6 +159,12 @@ _SIG_OIDS_TO_HASH: dict[ObjectIdentifier, hashes.HashAlgorithm | None] = {
     SignatureAlgorithmOID.GOSTR3411_94_WITH_3410_2001: None,
     SignatureAlgorithmOID.GOSTR3410_2012_WITH_3411_2012_256: None,
     SignatureAlgorithmOID.GOSTR3410_2012_WITH_3411_2012_512: None,
+    SignatureAlgorithmOID.MLDSA44: None,
+    SignatureAlgorithmOID.MLDSA65: None,
+    SignatureAlgorithmOID.MLDSA87: None,
+    SignatureAlgorithmOID.HASH_MLDSA44_WITH_SHA512: hashes.SHA512(),
+    SignatureAlgorithmOID.HASH_MLDSA65_WITH_SHA512: hashes.SHA512(),
+    SignatureAlgorithmOID.HASH_MLDSA87_WITH_SHA512: hashes.SHA512(),
 }
 
 
@@ -181,6 +193,12 @@ class PublicKeyAlgorithmOID:
     X448 = ObjectIdentifier("1.3.101.111")
     ED25519 = ObjectIdentifier("1.3.101.112")
     ED448 = ObjectIdentifier("1.3.101.113")
+    MLDSA44 = ObjectIdentifier("2.16.840.1.101.3.4.3.17")
+    MLDSA65 = ObjectIdentifier("2.16.840.1.101.3.4.3.18")
+    MLDSA87 = ObjectIdentifier("2.16.840.1.101.3.4.3.19")
+    HASH_MLDSA44_WITH_SHA512 = ObjectIdentifier("2.16.840.1.101.3.4.3.32")
+    HASH_MLDSA65_WITH_SHA512 = ObjectIdentifier("2.16.840.1.101.3.4.3.33")
+    HASH_MLDSA87_WITH_SHA512 = ObjectIdentifier("2.16.840.1.101.3.4.3.34")
 
 
 class ExtendedKeyUsageOID:
@@ -284,6 +302,18 @@ _OID_NAMES = {
     ),
     SignatureAlgorithmOID.GOSTR3410_2012_WITH_3411_2012_512: (
         "GOST R 34.10-2012 with GOST R 34.11-2012 (512 bit)"
+    ),
+    SignatureAlgorithmOID.MLDSA44: "ml-dsa-44",
+    SignatureAlgorithmOID.MLDSA65: "ml-dsa-65",
+    SignatureAlgorithmOID.MLDSA87: "ml-dsa-87",
+    SignatureAlgorithmOID.HASH_MLDSA44_WITH_SHA512: (
+        "hash-ml-dsa-44-with-sha512"
+    ),
+    SignatureAlgorithmOID.HASH_MLDSA65_WITH_SHA512: (
+        "hash-ml-dsa-65-with-sha512"
+    ),
+    SignatureAlgorithmOID.HASH_MLDSA87_WITH_SHA512: (
+        "hash-ml-dsa-87-with-sha512"
     ),
     HashAlgorithmOID.SHA1: "sha1",
     HashAlgorithmOID.SHA224: "sha224",
